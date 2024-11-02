@@ -1,5 +1,5 @@
 .button {
-  background-color: #5877e7;
+  background-color: #3c347c;
 }
 
 .button:hover {
@@ -18,16 +18,20 @@
 
 .button_action_add {
   padding: 12px 16px;
-  background-color: #5877e7;
+  background-color: #3c347c;
   border-radius: 8px;
-  border: 2px solid #fff;
+  border: 1px solid #ad8534;
   transition: 0.3s;
   cursor: pointer;
   font-family: Inter, Arial, sans-serif;
-  color: #fff;
+  color: #060606;
   font-size: 20px;
   line-height: 1.2;
   font-weight: 600;
+}
+
+.todo__delete-btn::before {
+  color: #3c347c;
 }
 
 @media screen and (max-width: 630px) {

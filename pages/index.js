@@ -5,7 +5,7 @@ const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
 const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
-const todoTemplate = document.querySelector("#todo-template");
+//const todoTemplate = document.querySelector("#todo-template"); - remove
 const todosList = document.querySelector(".todos__list");
 
 const openModal = (modal) => {
@@ -20,23 +20,26 @@ const closeModal = (modal) => {
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template");
   const todoElement = todo.getView();
+  return todoElement;
 };
+
 /*  const todoElement = todoTemplate.content
     .querySelector(".todo")
     .cloneNode(true);
   const todoNameEl = todoElement.querySelector(".todo__name");
   const todoCheckboxEl = todoElement.querySelector(".todo__completed");
+   
   const todoLabel = todoElement.querySelector(".todo__label");
   const todoDate = todoElement.querySelector(".todo__date");
-  const todoDeleteBtn = todoElement.querySelector(".todo__delete-btn");
+  const todoDeleteBtn = todoElement.querySelector(".todo__delete-btn");REMOVE ALL 
 
-  todoNameEl.textContent = data.name;
-  todoCheckboxEl.checked = data.completed;
+  todoNameEl.textContent = data.name;-remove 
+  todoCheckboxEl.checked = data.completed;-remove 
 
   // Apply id and for attributes.
   // The id will initially be undefined for new todos.
   todoCheckboxEl.id = `todo-${data.id}`;
-  todoLabel.setAttribute("for", `todo-${data.id}`);
+  todoLabel.setAttribute("for", `todo-${data.id}`); -REMOVE 
 
   // If a due date has been set, parsing this it with `new Date` will return a
   // number. If so, we display a string version of the due date in the todo.
@@ -51,10 +54,7 @@ const generateTodo = (data) => {
 
   todoDeleteBtn.addEventListener("click", () => {
     todoElement.remove();
-  });
-
-  return todoElement;
-}; */
+  });*/
 
 addTodoButton.addEventListener("click", () => {
   openModal(addTodoPopup);
