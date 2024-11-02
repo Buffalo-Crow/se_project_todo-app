@@ -3,7 +3,7 @@
 }
 
 .button:hover {
-  background-color: #4460c4;
+  background-color: #f8f7f0;
   cursor: pointer;
 }
 
@@ -28,10 +28,6 @@
   font-size: 20px;
   line-height: 1.2;
   font-weight: 600;
-}
-
-.todo__delete-btn::before {
-  color: #3c347c;
 }
 
 @media screen and (max-width: 630px) {
