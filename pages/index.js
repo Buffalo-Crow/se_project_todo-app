@@ -27,6 +27,7 @@ const addTodoPopupWithForm = new PopupwithForm({
 
     const values = { name, date, id };
     renderTodo(values);
+    updateTotal();
     addTodoPopupWithForm.close();
   },
 });
@@ -37,8 +38,24 @@ function handleCheck(completed) {
   todoCounter.updateCompleted(completed);
 }
 
+function handleDelete(completed) {
+  if (completed) {
+    todoCounter.updateCompleted(false);
+  }
+}
+
+function handleUpdate() {
+  todoCounter.updateTotal(completed);
+}
+
 const generateTodo = (data) => {
-  const todo = new Todo(data, "#todo-template", handleCheck());
+  const todo = new Todo(
+    data,
+    "#todo-template",
+    handleCheck,
+    handleDelete,
+    handleUpdate
+  );
   const todoElement = todo.getView();
   return todoElement;
 };
