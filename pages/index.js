@@ -39,6 +39,7 @@ function handleCheck(completed) {
 }
 
 function handleDelete(completed) {
+  todoCounter.updateCompleted(false);
   if (completed) {
     todoCounter.updateCompleted(false);
   }

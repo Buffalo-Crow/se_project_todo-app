@@ -5,6 +5,7 @@ class Todo {
     this._handleCheck = handleCheck;
     this._handleDelete = handleDelete;
     this._handleUpdate = handleUpdate;
+    this._completed = data.completed;
   }
 
   _setEventListeners() {
