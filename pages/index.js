@@ -41,12 +41,14 @@ function handleCheck(completed) {
 function handleDelete(completed) {
   todoCounter.updateTotal(false);
   if (completed) {
+    todoCounter.updateCompleted(true);
+  } else {
     todoCounter.updateCompleted(false);
   }
 }
 
 function handleUpdate() {
-  todoCounter.updateTotal(completed);
+  todoCounter.updateTotal(true);
 }
 
 const generateTodo = (data) => {

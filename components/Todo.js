@@ -13,10 +13,12 @@ class Todo {
     this._todoDeleteBtn.addEventListener("click", () => {
       this._handleDelete(this._completed);
       this._handleTodoDelete();
+      //this._handleUpdate();
     });
     this._todoCheckboxEl.addEventListener("change", () => {
       this._toggleCompletion();
       this._handleCheck(this._data.completed);
+      // this._handleUpdate();
     });
   }
 
