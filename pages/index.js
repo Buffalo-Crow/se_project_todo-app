@@ -41,34 +41,24 @@ function handleCheck(completed) {
 function handleDelete(completed) {
   todoCounter.updateTotal(false);
   if (completed) {
-    todoCounter.updateCompleted(true);
-  } else {
     todoCounter.updateCompleted(false);
   }
 }
 
-function handleUpdate() {
-  todoCounter.updateTotal(true);
-}
-
 const generateTodo = (data) => {
-  const todo = new Todo(
-    data,
-    "#todo-template",
-    handleCheck,
-    handleDelete,
-    handleUpdate
-  );
+  const todo = new Todo(data, "#todo-template", handleCheck, handleDelete);
   const todoElement = todo.getView();
   return todoElement;
 };
 
+const renderTodo = (item) => {
+  const todo = generateTodo(item);
+  todoSection.addItem(todo);
+};
+
 const todoSection = new Section({
   items: initialTodos,
-  renderer: (item) => {
-    const todoSectionEl = generateTodo(item);
-    todoSection.addItem(todoSectionEl);
-  },
+  renderer: renderTodo,
   containerSelector: ".todos__list",
 });
 
@@ -77,11 +67,6 @@ todoSection.renderItems();
 addTodoButton.addEventListener("click", () => {
   addTodoPopupWithForm.open();
 });
-
-const renderTodo = (item) => {
-  const todo = generateTodo(item);
-  todosList.append(todo);
-};
 
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
 newTodoValidator.enableValidation();
